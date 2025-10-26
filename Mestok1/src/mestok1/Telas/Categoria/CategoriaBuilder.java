@@ -14,7 +14,7 @@ public class CategoriaBuilder {
     public void Builder(){
         JFrame frame = new JFrame("Categoria");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(400, 300);
+        frame.setSize(400, 400);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.add(new CategoriaForm());
