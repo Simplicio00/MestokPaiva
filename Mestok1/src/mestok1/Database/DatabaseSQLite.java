@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
-import mestok1.Database.scripts.ScriptEstatico;
+import mestok1.Database.Scripts.ScriptEstatico;
 
 /**
  *
@@ -26,9 +26,24 @@ public class DatabaseSQLite {
             if (conn != null) {
 
                 Statement stmt = conn.createStatement();
-                String criarBanco = ScriptEstatico.CriarBanco;
+
+                stmt.execute("PRAGMA foreign_keys = ON;");
                 
-                stmt.execute(criarBanco);
+
+                String criarBanco = ScriptEstatico.CriarBanco;
+
+                //stmt.execute(criarBanco);
+
+                String[] comandos = criarBanco.split(";");
+                for (String sql : comandos) {
+                    sql = sql.trim();
+                    if (!sql.isEmpty()) {
+                        stmt.execute(sql + ";");
+                    }
+                }
+                
+                
+                
                 stmt.close();
             }
 

@@ -9,6 +9,8 @@ package mestok1.Database.Repository;
  * @author user1
  */
 public abstract class Commom {
-    public abstract void Get();
-    public abstract void GetById(String id);
+    public abstract Object Get();
+    public abstract Object GetById(String id);
+    public abstract void Post();
+    public abstract void Delete();
 }

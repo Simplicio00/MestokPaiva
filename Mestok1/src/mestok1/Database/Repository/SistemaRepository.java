@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import mestok1.Database.Entidade.Sistema;
-import mestok1.Database.scripts.ScriptEstatico;
+import mestok1.Database.Scripts.ScriptEstatico;
 
 /**
  *
@@ -19,6 +19,7 @@ import mestok1.Database.scripts.ScriptEstatico;
  */
 public class SistemaRepository {
     public String identificador;
+    public static int sistemaId;
 
     public void setIdentificador(String identificador) {
         this.identificador = identificador;
@@ -67,6 +68,7 @@ public class SistemaRepository {
                     sistema = new Sistema();
                     sistema.setCodSistema(rs.getString("CodSistema"));
                     sistema.setSistemaId(rs.getInt("SistemaId"));
+                    this.sistemaId = sistema.SistemaId;
                 }
                 
                 rs.close();

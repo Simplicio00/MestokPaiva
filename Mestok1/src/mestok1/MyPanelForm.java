@@ -1,6 +1,9 @@
 package mestok1;
 
 import java.awt.Window;
+import java.net.MalformedURLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
@@ -36,6 +39,11 @@ public class MyPanelForm extends javax.swing.JPanel {
         c_codigo_sistema.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         c_codigo_sistema.setToolTipText("Obs: Caso o seu [código de sistema] não seja encontrado, será criado um novo sistema para o indentificador que foi inserido.");
         c_codigo_sistema.setName("c_codigo_sistema"); // NOI18N
+        c_codigo_sistema.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                c_codigo_sistemaKeyPressed(evt);
+            }
+        });
 
         jLabel1.setText("Bem vindo ao MESTOK");
 
@@ -79,8 +87,8 @@ public class MyPanelForm extends javax.swing.JPanel {
 
         c_codigo_sistema.getAccessibleContext().setAccessibleDescription("Código do sistema. Obs: Caso o seu código não seja encontrado pelo sistema, será criado um novo registro para estoque.");
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    
+    private void BuscarOrCadastrarEstoque() throws MalformedURLException{
         String input = c_codigo_sistema.getText();
         
         if (input != null && input.length() > 1) {
@@ -104,9 +112,29 @@ public class MyPanelForm extends javax.swing.JPanel {
             menu.codigoSistema = sistema.CodSistema;
             menu.Build();
         }
-        
+    }
+    
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        try {
+            BuscarOrCadastrarEstoque();
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(MyPanelForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void c_codigo_sistemaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_c_codigo_sistemaKeyPressed
+        // TODO add your handling code here:
+        
+        if (evt.getKeyCode() == 10) {
+            try {
+                BuscarOrCadastrarEstoque();
+            } catch (MalformedURLException ex) {
+                Logger.getLogger(MyPanelForm.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_c_codigo_sistemaKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

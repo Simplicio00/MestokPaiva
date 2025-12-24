@@ -60,7 +60,7 @@
         <Property name="text" type="java.lang.String" value="SAIR"/>
         <Property name="actionCommand" type="java.lang.String" value=""/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-          <Color id="Cursor em Forma de M&#xe3;o"/>
+          <Color id="Default Cursor"/>
         </Property>
       </Properties>
     </Component>
@@ -163,7 +163,7 @@
               <Image iconType="1" name="https://img.icons8.com/?size=100&amp;id=63500&amp;format=png&amp;color=000000"/>
             </Property>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Cursor em Forma de M&#xe3;o"/>
+              <Color id="Hand Cursor"/>
             </Property>
             <Property name="name" type="java.lang.String" value="imgcategoria" noResource="true"/>
           </Properties>
@@ -182,10 +182,13 @@
               <Image iconType="1" name="https://img.icons8.com/?size=100&amp;id=95469&amp;format=png&amp;color=000000"/>
             </Property>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Cursor em Forma de M&#xe3;o"/>
+              <Color id="Hand Cursor"/>
             </Property>
             <Property name="name" type="java.lang.String" value="imgcategoria" noResource="true"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel3MouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
@@ -203,7 +206,7 @@
               <Image iconType="1" name="https://img.icons8.com/?size=100&amp;id=RXkxCNTjdIf5&amp;format=png&amp;color=000000"/>
             </Property>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Cursor em Forma de M&#xe3;o"/>
+              <Color id="Default Cursor"/>
             </Property>
             <Property name="name" type="java.lang.String" value="imgcategoria" noResource="true"/>
           </Properties>
@@ -219,10 +222,13 @@
               <Image iconType="1" name="https://img.icons8.com/?size=100&amp;id=X5miyX29pydv&amp;format=png&amp;color=000000"/>
             </Property>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Cursor em Forma de M&#xe3;o"/>
+              <Color id="Hand Cursor"/>
             </Property>
             <Property name="name" type="java.lang.String" value="imgcategoria" noResource="true"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel8MouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

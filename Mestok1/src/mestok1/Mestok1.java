@@ -4,6 +4,7 @@
  */
 package mestok1;
 
+import Utils.SysUtils;
 import java.io.IOException;
 import javax.swing.JFrame;
 import mestok1.Database.DatabaseSQLite;
@@ -13,7 +14,8 @@ import mestok1.Database.DatabaseSQLite;
  * @author user1
  */
 public class Mestok1 {
-
+    
+    public static int SistemaId;
     /**
      * @param args the command line arguments
      */
@@ -29,8 +31,8 @@ public class Mestok1 {
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.add(new MyPanelForm());
+        SysUtils.SetLogo(frame);
         frame.setVisible(true);
-        
     }
     
 }

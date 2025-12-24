@@ -59,6 +59,9 @@
       <AccessibilityProperties>
         <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value="C&#xf3;digo do sistema. Obs: Caso o seu c&#xf3;digo n&#xe3;o seja encontrado pelo sistema, ser&#xe1; criado um novo registro para estoque."/>
       </AccessibilityProperties>
+      <Events>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="c_codigo_sistemaKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>

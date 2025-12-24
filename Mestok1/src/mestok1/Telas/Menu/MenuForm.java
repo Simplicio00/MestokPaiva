@@ -1,9 +1,14 @@
 
 package mestok1.Telas.Menu;
 
+import java.net.MalformedURLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import mestok1.Telas.Categoria.CategoriaBuilder;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import mestok1.Telas._Categoria.CategoriaBuilder;
+import mestok1.Telas._Estoque.EstoqueBuilder;
+import mestok1.Telas._Produto.ProdutoBuilder;
 
 public class MenuForm extends javax.swing.JPanel {
     public String codigoExibicao;
@@ -47,7 +52,7 @@ public class MenuForm extends javax.swing.JPanel {
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("SAIR");
         jButton1.setActionCommand("");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         menu_sistema_cod.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         menu_sistema_cod.setText("sistemacod");
@@ -91,6 +96,11 @@ public class MenuForm extends javax.swing.JPanel {
         }.getIcon());
         jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel3.setName("imgcategoria"); // NOI18N
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
 
         jLabel4.setText("PRODUTO");
 
@@ -107,7 +117,7 @@ public class MenuForm extends javax.swing.JPanel {
                 return null;
             }
         }.getIcon());
-        jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabel6.setName("imgcategoria"); // NOI18N
 
         jLabel7.setText("ESTOQUE");
@@ -125,6 +135,11 @@ public class MenuForm extends javax.swing.JPanel {
         }.getIcon());
         jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel8.setName("imgcategoria"); // NOI18N
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
         panel1.setLayout(panel1Layout);
@@ -209,7 +224,11 @@ public class MenuForm extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        new CategoriaBuilder().Builder();
+        try {
+            new CategoriaBuilder().Builder();
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(MenuForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void formAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_formAncestorAdded
@@ -218,6 +237,23 @@ public class MenuForm extends javax.swing.JPanel {
         //var dataLocal = LocalDate.now().format(pattern);
         this.menu_sistema_cod.setText(codigoExibicao + " " + LocalDate.now().format(DateTimeFormatter.ISO_DATE));
     }//GEN-LAST:event_formAncestorAdded
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        try {
+            new ProdutoBuilder().Builder();
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(MenuForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        try {
+            // TODO add your handling code here:
+            new EstoqueBuilder().Builder();
+        } catch (MalformedURLException ex) {
+            Logger.getLogger(MenuForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jLabel8MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
